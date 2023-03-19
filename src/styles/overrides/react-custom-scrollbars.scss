@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.Scrollbar {
+  > div:last-child {
+    width: 4px !important;
+    > div {
+      background-color: rgba($clSecondaryDark, 0.1) !important;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import '../../styles/variables';
+@import '../../styles/mixins/_label';
+
+.ToggleBox {
+  &.open {
+    padding-bottom: 10px;
+
+    .header {
+      border-left-color: $clSecondary;
+
+      &:before {
+        transform: rotate(0deg);
+      }
+
+      &::after {
+        transform: rotate(-90deg);
+        opacity: 0;
+      }
+    }
+  }
+
+  .header {
+    border-left: 5px solid $clSecondaryDark;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $clGreyLight;
+    transition: border-color $transition, background-color $transition;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    border-top: 1px solid rgba(white, 0.4);
+
+    &:hover {
+      background-color: mix(white, $clGreyLight);
+      border-left-color: $clSecondary;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      width: 15px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: $clSecondary;
+      position: absolute;
+      right: 15px;
+      top: 24px;
+      transition: opacity $transition, transform $transition;
+      opacity: 1;
+      transform: rotate(90deg);
+    }
+
+    &::after {
+      transform: rotate(0deg);
+    }
+
+    h3 {
+      @include label;
+      font-weight: 600;
+      padding-left: 10px;
+      margin: 0;
+      line-height: 50px;
+      font-size: 0.9em;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import '../../styles/variables';
+@import '../../styles/mixins/_label';
+
+.Header {
+  background-color: $clHeader;
+  height: $headerHeight;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+
+  &.loading,
+  &.rendering {
+    .left .logo .logo-mark {
+      animation-name: logoMarkLoading;
+      animation-timing-function: linear;
+      animation-duration: 3s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &.rendering {
+    .left .logo .logo-mark {
+      animation-duration: 2s;
+    }
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .logo {
+      padding: 20px 15px;
+      display: flex;
+      align-items: center;
+      transition: opacity $transition;
+
+      svg:first-child {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      .logo-mark {
+        border-radius: 20px;
+        animation-name: logoMarkIntro;
+        animation-timing-function: ease-out;
+        animation-duration: 0.3s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        transition: animation-duration $transition;
+      }
+
+      #sabio-logo-mark {
+        transform-origin: center;
+      }
+    }
+  }
+
+  nav {
+    a {
+      @include label;
+      color: white;
+      text-decoration: none;
+      font-size: 1.06em;
+      padding: 20px 20px 15px 20px;
+      border-bottom: 5px solid transparent;
+      transition: border-color $transition, color $transition;
+      color: rgba(white, 0.8);
+
+      &:hover {
+        border-bottom-color: rgba($clSecondary, 0.7);
+        color: white;
+      }
+
+      &.active {
+        color: white;
+        border-bottom-color: $clSecondary;
+      }
+    }
+  }
+}
+
+@keyframes logoMarkIntro {
+  0% {
+    transform: scale(0.5);
+    filter: hue-rotate(0deg);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  95% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes logoMarkLoading {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}

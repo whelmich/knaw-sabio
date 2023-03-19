@@ -1,0 +1,36 @@
+@import './variables';
+@import './mixins/_label';
+
+.btn {
+  @include label;
+  border: 0;
+  background-color: $clSecondary;
+  color: white;
+  box-shadow: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-weight: 500;
+  opacity: 1;
+  text-decoration: none;
+  display: inline-block;
+  transition: box-shadow $transition, opacity $transition;
+
+  &:hover {
+    box-shadow: 1px 1px 4px rgba($clSecondary, 0.3);
+    opacity: 0.8;
+  }
+
+  &.small {
+    margin-top: -4px;
+    margin-bottom: 5px;
+  }
+
+  &.dark {
+    background-color: $clSecondaryDark;
+  }
+
+  &.margin {
+    margin-left: 15px;
+  }
+}

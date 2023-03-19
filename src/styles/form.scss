@@ -1,0 +1,19 @@
+input,
+select,
+textarea {
+  padding: 8px;
+  border: 1px solid $clGrey;
+  border-radius: 5px;
+  outline: 0;
+  width: 100%;
+  font-family: $fontBody;
+  background-color: white;
+}
+
+select {
+  appearance: none;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxNCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNi4yNjk1MyA4LjkxNzk3QzYuNjU2MjUgOS4zMDQ2OSA3LjMwMDc4IDkuMzA0NjkgNy42ODc1IDguOTE3OTdMMTMuNTMxMiAzLjA3NDIyQzEzLjk2MDkgMi42NDQ1MyAxMy45NjA5IDIgMTMuNTMxMiAxLjYxMzI4TDEyLjU4NTkgMC42MjVDMTIuMTU2MiAwLjIzODI4MSAxMS41MTE3IDAuMjM4MjgxIDExLjEyNSAwLjYyNUw2Ljk1NzAzIDQuNzkyOTdMMi44MzIwMyAwLjYyNUMyLjQ0NTMxIDAuMjM4MjgxIDEuODAwNzggMC4yMzgyODEgMS4zNzEwOSAwLjYyNUwwLjQyNTc4MSAxLjYxMzI4Qy0wLjAwMzkwNjI1IDIgLTAuMDAzOTA2MjUgMi42NDQ1MyAwLjQyNTc4MSAzLjA3NDIyTDYuMjY5NTMgOC45MTc5N1oiIGZpbGw9IiMxNDcwQTQiLz48L3N2Zz4=);
+  padding-right: 30px;
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+}

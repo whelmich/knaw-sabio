@@ -1,0 +1,140 @@
+@import '../../styles/variables';
+@import '../../styles/mixins/_label';
+
+.XAxis {
+  pointer-events: none;
+
+  .attribute {
+    margin-left: 17px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &.showList {
+      .current {
+        span {
+          border-bottom-color: rgba($clSecondary, 0.5) !important;
+        }
+      }
+    }
+
+    .prev,
+    .next {
+      pointer-events: auto;
+      width: 40px;
+      height: 2em;
+      transition: background-color $transition;
+      background-color: rgba($clGreyLight, 0.5);
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      cursor: pointer;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-right: 1px solid rgba($clGreyLight, 0.3);
+
+      &:hover {
+        background-color: rgba(white, 0.4);
+      }
+    }
+
+    .next {
+      transform: rotate(180deg);
+    }
+
+    .current {
+      @include label;
+      pointer-events: auto;
+      max-width: 100%;
+      width: 150px;
+      line-height: 2em;
+      text-align: center;
+      transition: background-color $transition;
+      cursor: pointer;
+      background-color: rgba($clGreyLight, 0.5);
+
+      &:hover {
+        background-color: rgba(white, 0.4);
+
+        span {
+          border-bottom: 2px solid rgba($clSecondary, 0.5);
+        }
+      }
+
+      span {
+        border-bottom: 2px solid rgba($clSecondary, 0.1);
+        transition: border-color $transition;
+      }
+    }
+
+    .list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 40px;
+      background: white;
+      border-radius: 5px;
+      overflow: hidden;
+      display: block;
+      width: 150px;
+      box-shadow: 1px 1px 5px rgba($clBlack, 0.3);
+
+      li {
+        display: block;
+        padding: 7px 10px;
+        border-bottom: 1px solid $clGrey;
+        transition: background-color 0.1s ease-out;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $clSecondary;
+          color: white;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &.active {
+          background-color: $clGreyLight;
+          color: $clBlack;
+        }
+      }
+    }
+  }
+
+  .min,
+  .max {
+    position: absolute;
+    bottom: 10px;
+    color: rgba($clBlack, 0.3);
+    font-weight: 600;
+    font-size: 0.7em;
+    width: 30px;
+    animation-name: valueIntro;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    white-space: nowrap;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    padding-top: 4px;
+  }
+
+  .min {
+    left: 53px;
+    border-left: 2px solid $clAxisBorder;
+    padding-left: 4px;
+  }
+
+  .max {
+    right: 22px;
+    text-align: right;
+    border-right: 2px solid $clAxisBorder;
+    padding-right: 4px;
+  }
+}

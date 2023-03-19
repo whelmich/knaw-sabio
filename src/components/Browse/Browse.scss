@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.Browse {
+  position: relative;
+  height: calc(100% - #{$headerHeight});
+  background: $clBrowserBackground;
+  display: flex;
+  justify-content: stretch;
+  max-width: 100vw;
+
+  .datasets {
+    position: absolute;
+    top: -50px;
+    left: 175px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+  }
+}

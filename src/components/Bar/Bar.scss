@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+
+$height: 4px;
+
+.Bar {
+  padding: 7px 10px 5px 7px;
+  transition: background-color $transition;
+
+  &.interactive {
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: background-color $transition, border-color $transition;
+
+    &:hover {
+      background-color: mix(white, $clPrimary, 90%);
+      border-left-color: $clPrimary;
+    }
+  }
+
+  &.highlight {
+    animation-name: barBlink;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-duration: 0.6s;
+    animation-delay: 0.2s;
+    animation-timing-function: ease-out;
+
+    border-left-color: $clPrimary;
+  }
+
+  .PercentageLabel {
+    float: right;
+  }
+
+  .bar {
+    margin-top: 6px;
+    width: 100%;
+    height: $height;
+    background-color: $clGrey;
+
+    .value {
+      background-color: $clPrimary;
+      height: $height;
+
+      animation-name: barIntro;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-duration: 0.5s;
+      transform-origin: left;
+      transition: width 0.5s ease-out;
+      border-right: 2px solid rgba($clBlack, 0.2);
+    }
+  }
+}
+
+@keyframes barIntro {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes barBlink {
+  0% {
+    background-color: white;
+  }
+  20% {
+    background-color: mix(white, $clPrimary, 80%);
+  }
+  100% {
+    background-color: mix(white, $clPrimary, 90%);
+  }
+}

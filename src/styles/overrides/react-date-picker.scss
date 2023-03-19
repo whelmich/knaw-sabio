@@ -1,0 +1,68 @@
+// Override react-date-picker styling
+.react-date-picker {
+  .react-date-picker__wrapper {
+    font-size: 0.9em !important;
+    padding: 3px;
+    border: 1px solid $clGrey !important;
+    border-radius: 5px;
+    outline: 0;
+    width: 100%;
+    font-family: $fontBody;
+
+    @media (max-width: 1100px) {
+      font-size: 0.8em !important;
+    }
+
+    .react-date-picker__button__icon {
+      stroke: $clSecondary;
+    }
+
+    .react-date-picker__clear-button__icon {
+      stroke-width: 3px;
+      transform: scale(0.8);
+      stroke: $clGreyMedium;
+    }
+  }
+  .react-calendar {
+    border-radius: 5px !important;
+    box-shadow: 1px 1px 10px rgba($clBlack, 0.1);
+    border: 1px solid $clGrey;
+    overflow: hidden;
+
+    .react-calendar__tile--now {
+      background-color: $clGreyLight !important;
+    }
+
+    .react-calendar__month-view__days__day--weekend {
+      color: rgba($clBlack, 0.6);
+    }
+
+    .react-calendar__tile--active {
+      background-color: $clSecondary !important;
+      color: white !important;
+    }
+
+    .react-calendar__tile--hasActive {
+      background-color: $clSecondary !important;
+      color: white;
+      transition: opacity $transition;
+
+      &:enabled:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .react-calendar__navigation {
+      background-color: $clGreyLight;
+
+      button {
+        background-color: transparent;
+        transition: background-color;
+
+        &:enabled:hover {
+          background-color: $clGrey;
+        }
+      }
+    }
+  }
+}

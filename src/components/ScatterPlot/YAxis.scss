@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+@import '../../styles/mixins/_label';
+
+.YAxis {
+  pointer-events: none;
+  .title {
+    @include label;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+    background-color: rgba($clGreyLight, 0.5);
+    border-radius: 5px;
+    padding: 0 10px;
+    height: 2em;
+    line-height: 2em;
+
+    > span {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+  .min,
+  .max {
+    color: rgba($clBlack, 0.3);
+    font-weight: 600;
+    font-size: 0.7em;
+    position: absolute;
+    text-align: right;
+    max-width: 35px;
+    right: calc(100% - 35px);
+    animation-name: valueIntro;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+  }
+
+  .max {
+    top: 24px;
+    border-top: 2px solid $clAxisBorder;
+    padding-top: 4px;
+  }
+
+  .min {
+    bottom: 52px;
+    border-bottom: 2px solid $clAxisBorder;
+    padding-bottom: 2px;
+  }
+}
+
+@keyframes valueIntro {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

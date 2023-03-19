@@ -1,0 +1,6 @@
+@import '../../styles/variables';
+.ScatterPlot {
+  width: 100%;
+  height: calc(100% - #{$columnHeaderHeight});
+  position: relative;
+}

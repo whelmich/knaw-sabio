@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.PercentageLabel {
+  font-size: 0.9em;
+  font-family: $fontHeading;
+
+  span {
+    color: $clGreyMedium;
+    display: inline-block;
+    padding-left: 2px;
+  }
+}

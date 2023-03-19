@@ -1,0 +1,92 @@
+.Intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 20px 50px;
+
+  .logo {
+    position: relative;
+    width: 220px;
+    height: 180px;
+
+    .logo-mark {
+      position: absolute;
+      left: 40px;
+      top: 40px;
+      opacity: 0.2;
+
+      animation-iteration-count: infinite;
+      animation-direction: both;
+      animation-timing-function: ease-in-out;
+
+      &:first-child {
+        z-index: 10;
+        opacity: 0.4;
+      }
+
+      &:nth-child(2) {
+        animation-name: logoMarkRockA;
+        animation-duration: 27s;
+        animation-delay: -8s;
+      }
+
+      &:nth-child(3) {
+        animation-duration: 37s;
+        animation-delay: -16s;
+        animation-name: logoMarkRockB;
+      }
+    }
+  }
+
+  .text {
+    max-width: 520px;
+
+    .buttons {
+      a[target='_blank'] {
+        text-decoration: none;
+        display: inline-block;
+        padding-left: 40px;
+
+        background-position: 5px center;
+        background-repeat: no-repeat;
+        background-size: 24px;
+      }
+    }
+  }
+}
+
+@keyframes logoMarkRockA {
+  0% {
+    transform: translate(14px, 3px);
+  }
+  25% {
+    transform: translate(2px, -8px);
+  }
+  50% {
+    transform: translate(4px, 8px);
+  }
+  75% {
+    transform: translate(-4px, 0);
+  }
+  100% {
+    transform: translate(14px, 3px);
+  }
+}
+
+@keyframes logoMarkRockB {
+  0% {
+    transform: translate(-5px, -6px);
+  }
+  25% {
+    transform: translate(7px, 8px);
+  }
+  50% {
+    transform: translate(-3px, 8px);
+  }
+  75% {
+    transform: translate(-14px, -5px);
+  }
+  100% {
+    transform: translate(-5px, -6px);
+  }
+}

@@ -1,0 +1,16 @@
+.FormBox {
+  padding: 10px 10px 0;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+
+    .extra {
+      float: right;
+    }
+  }
+
+  &.no-padding-right {
+    padding-right: 0;
+  }
+}

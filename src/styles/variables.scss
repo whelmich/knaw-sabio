@@ -1,0 +1,34 @@
+$clWhite: #ffffff;
+$clDarkBlue: #183748;
+$clBlue: #1470a4;
+$clGreen: #90dcd0;
+$clYellow: #ffce06;
+$clRed: #a41414;
+$clYellowAlt: #eedf85;
+$clGreyLight: #eef2f4;
+$clGrey: #dee2e3;
+$clGreyMedium: #b8cbcf;
+$clBlack: #212121;
+
+$clPrimary: $clYellow;
+$clSecondary: $clBlue;
+$clSecondaryDark: $clDarkBlue;
+$clText: rgba($clBlack, 0.9);
+$clIndicator: $clYellow;
+$clInteractive: $clBlue;
+$clHeader: $clBlack;
+$clColumnHeader: $clDarkBlue;
+$clBrowserBackground: $clGreyLight;
+$clGuide: rgba($clDarkBlue, 0.08);
+$clGuideLabel: rgba($clDarkBlue, 0.6);
+$clAxisBorder: rgba($clSecondary, 0.06);
+
+$transition: 0.25s ease-out;
+
+$fontHeading: 'Cabin', sans-serif;
+$fontBody: 'Roboto', sans-serif;
+
+$headerHeight: 60px;
+$columnHeaderHeight: 50px;
+$columnLeftWidth: 345px;
+$columnRightWidth: 345px;

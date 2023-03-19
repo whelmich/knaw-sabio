@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.Partners {
+  padding: 20px 0 30px;
+  > h2 {
+    margin: 10px;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+  }
+  .links {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+}

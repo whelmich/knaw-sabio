@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.Guides {
+  position: absolute;
+  top: $columnHeaderHeight;
+  left: 0;
+  width: 100%;
+  height: calc(100% - #{$columnHeaderHeight});
+  pointer-events: none;
+}

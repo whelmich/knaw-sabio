@@ -1,0 +1,85 @@
+@import '../../styles/variables';
+
+.HoverObject {
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 1px 1px 10px rgba($clBlack, 0.3);
+  width: 270px;
+  min-height: 240px;
+  border-top: 1px solid $clPrimary;
+  z-index: 9999;
+  animation-name: hoverObjectIntro;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  pointer-events: none;
+
+  .image {
+    background-size: cover;
+    background-position: center;
+    background-color: $clGreyLight;
+    background-repeat: no-repeat;
+    height: 140px;
+    > div {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 140px;
+    }
+  }
+
+  .details {
+    padding: 10px 10px 30px;
+
+    h2 {
+      font-size: 1.1em;
+      margin: 0;
+      padding: 0 0 7px 0;
+    }
+
+    .attributes {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 0.87em;
+      color: $clText;
+
+      > div {
+        width: 50%;
+        padding: 5px 0 5px 20px;
+        background-position: left 3px;
+        background-repeat: no-repeat;
+
+        &.large {
+          width: 100%;
+        }
+      }
+    }
+
+    .score {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($clPrimary, 0.15);
+      padding: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      .PercentageLabel {
+        margin-left: 7px;
+        span {
+          color: rgba($clBlack, 0.6);
+        }
+      }
+    }
+  }
+}
+
+@keyframes hoverObjectIntro {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

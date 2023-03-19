@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.App {
+  height: 100%;
+
+  .api-error {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid $clSecondary;
+    border-left-width: 5px;
+    border-radius: 2px;
+  }
+
+  .mobile-warning {
+    display: none;
+
+    @media (max-width: 1023px) {
+      display: flex;
+      position: fixed;
+      z-index: 99999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($clSecondaryDark, 0.9);
+      color: white;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+
+      h2 {
+        margin-top: 40px;
+      }
+    }
+  }
+}

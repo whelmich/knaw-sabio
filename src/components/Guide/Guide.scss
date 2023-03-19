@@ -1,0 +1,90 @@
+@import '../../styles/variables';
+.Guide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 15px;
+
+  > div {
+    font-size: 0.65em;
+    line-height: 0.65em;
+    padding: 3px;
+    font-weight: bold;
+    color: $clGuideLabel;
+    background-color: rgba($clBrowserBackground, 0.8);
+    display: inline-block;
+    position: absolute;
+    text-align: right;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: $clGuideLabel;
+  }
+
+  &.horizontal {
+    width: 100%;
+    border-top: 1px solid $clGuide;
+
+    &::before,
+    &::after {
+      width: 4px;
+      top: -2px;
+    }
+
+    &::after {
+      left: auto;
+      right: 0;
+    }
+
+    > div {
+      width: 34px;
+      left: 4px;
+      bottom: 0;
+      transform: translateY(-15px);
+    }
+
+    &.yLow {
+      > div {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &.vertical {
+    border-left: 1px solid $clGuide;
+    height: 100%;
+
+    &::before,
+    &::after {
+      height: 4px;
+      left: -2px;
+    }
+
+    &::after {
+      top: auto;
+      bottom: 0;
+    }
+
+    > div {
+      right: 0;
+      bottom: 26px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 250px;
+    }
+
+    &.xLow {
+      > div {
+        right: auto;
+        left: 0;
+        text-align: left;
+      }
+    }
+  }
+}

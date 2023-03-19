@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+.StatsColumn {
+  flex-shrink: 0;
+  width: $columnRightWidth;
+  background-color: white;
+  box-shadow: -1px 0px 2px rgba($clBlack, 0.1);
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: opacity $transition;
+
+  .global {
+    border-bottom: 1px solid $clGrey;
+    padding: 5px 0;
+    border-left: 3px solid mix(white, $clGreyLight, 50%);
+  }
+
+  .scores {
+    .Bar:first-child {
+      padding-top: 10px;
+    }
+  }
+
+  .Scrollbar > div:last-child {
+    opacity: 0;
+    transition: opacity $transition;
+  }
+
+  &:hover {
+    .Scrollbar > div:last-child {
+      opacity: 1;
+    }
+  }
+}

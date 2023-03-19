@@ -1,0 +1,75 @@
+@import '../../styles/variables';
+.ObjectDetailsColumn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $columnRightWidth;
+  background-color: white;
+  box-shadow: -1px 0px 2px rgba($clBlack, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation-name: objectDetailsColumnIntro;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-duration: 0.2s;
+
+  .close {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transition: background-color $transition;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(white, 0.1);
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      width: 15px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: white;
+      position: absolute;
+      right: 18px;
+      top: 23px;
+      transition: opacity $transition, transform $transition;
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  .Scrollbar > div:last-child {
+    opacity: 0;
+    transition: opacity $transition;
+  }
+
+  &:hover {
+    .Scrollbar > div:last-child {
+      opacity: 1;
+    }
+  }
+
+  &.loading {
+    .ObjectDetails {
+      transition: opacity 0.3s ease-out;
+      transition-delay: 0.2s;
+      opacity: 0.4;
+    }
+  }
+}
+
+@keyframes objectDetailsColumnIntro {
+  from {
+    transform: translateX(#{$columnRightWidth});
+  }
+  to {
+    transform: translateX(0);
+  }
+}
