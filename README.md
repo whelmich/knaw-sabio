@@ -1,3 +1,11 @@
+## :point_right: Repository Archived and Relocated
+ 
+This repository has been archived and is no longer actively maintained. 
+
+The latest version of the project can now be found at [netwerk-digitaal-erfgoed/sabio-frontend](https://github.com/netwerk-digitaal-erfgoed/sabio-frontend).
+
+---
+
 # SABIO UI
 
 This repository contains the user interface for [The SociAl BIas Observatory (SABIO)](https://www.cultural-ai.nl/projects/post-2-4c8dm).
